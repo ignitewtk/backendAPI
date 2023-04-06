@@ -47,3 +47,13 @@ router.post('/files/add', function(req, res, next) {
 router.get('/emails', function(req, res, next) {
   res.send(getEmails())
 })
+
+function funcTestStr() {
+  return "username"
+}
+
+function funcTestParam(input) {
+  return input
+}
+
+module.exports = {funcTestStr, funcTestParam}
