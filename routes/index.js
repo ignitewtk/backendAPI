@@ -56,4 +56,5 @@ function funcTestParam(input) {
   return input
 }
 
-module.exports = {funcTestStr, funcTestParam}
+module.exports = router;
+// {funcTestStr, funcTestParam}
