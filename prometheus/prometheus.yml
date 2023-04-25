@@ -1,0 +1,19 @@
+global:
+  scrape_internal: 15s
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+    - targets: ['localhost:9090']
+  - job_name: 'service1'
+    static_configs:
+    - targets: ['service1-instance1:9090', 'service1-instance2:9000']
+  - job_name: 'service2'
+    static_configs:
+    - targets: ['service2-instance1:9090', 'service2-instance2:9000']
+  - job_name: 'my_web_app'
+    static_configs:
+    - targets: ['localhost:3000']
+
+rule_files:
+  - alert.rules
