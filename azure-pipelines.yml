@@ -22,8 +22,6 @@ steps:
     npm run build
   displayName: 'npm install and build'
 
-steps:
-- task: NodeTool@1
 - script: |
     npm run test
   displayName: 'Runing test'
