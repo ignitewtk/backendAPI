@@ -1,5 +1,5 @@
 
-FROM node:12.19.1
+FROM node:16.15.1
 
 ENV NODE_ENV=production
 
