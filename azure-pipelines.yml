@@ -11,6 +11,9 @@ pool:
   demands:
   - agent.name -equals LAPTOP01
 
+variables:
+  buildConfiguration: 'Release'
+  
 steps:
 - task: NodeTool@0
   inputs:
@@ -25,3 +28,22 @@ steps:
 - script: |
     npm run test
   displayName: "Running test"
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip)'
+    artifact: 'drop'
+  displayName: 'Publish artifact'
+
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Azure subscription 1'
+    appType: 'webapp'
+    WebAppName: 'backend20230513'
+    packageForLinux: '$(Build.ArtifactStagingDirectory)$(Build.BuildId).zip'
+    RuntimeStack: 'NODE|14.x'
+    StartupCommand: 'npm start'
+    enableCustomDeployment: true
+  displayName: 'Deploy to Azure App Service'
+  
