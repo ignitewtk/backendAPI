@@ -31,5 +31,8 @@ steps:
 
 - task: PublishPipelineArtifact@1
   inputs:
+    targetPath: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     artifact: 'drop'
   displayName: 'Publish artifact'
+
+  
