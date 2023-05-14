@@ -1,0 +1,112 @@
+# Node.js
+# Build a general Node.js project with npm.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+# name: 1.0$(Rev:.r)
+
+# equivalents trigger
+# trigger:
+#   branches:
+#     include:
+#       - main
+#       - feature/*
+#     exclude:
+#       - release/old*
+#   pr: (pull request...)
+#       - main
+#       - release/*
+#   paths:
+#     include:
+#       - webapp/**
+
+trigger:
+- main
+
+# pool:
+#   vmImage: ubantu-latest
+
+pool:
+  name: Default
+  demands:
+  - agent.name -equals LAPTOP01
+
+variables:
+  buildConfiguration: 'Release'
+  # name: Tony
+
+
+# stages: 
+# - stage: Build
+#   jobs:
+#   - job: BuildJob
+#     pool: ${{ parameters.pool}}
+#     script: echo Building
+# - stage: Test
+#   dependsOn: Build
+#   jobs:
+#   - job: TestOnWindows
+#     steps:
+#     - script: echo Testing on Windows!
+#   - job: TestOnLinuxs
+#     steps:
+#     - script: echo Testing on Linux!
+# - stage: Deploy
+#   dependsOn: Test
+#   jobs:
+#   - job: Deploy
+#     steps:
+#     - script: echo Deploting!
+#     - displayName: DeployJob
+
+# jobs:
+# - job: helloworld
+#   steps:
+#   - checkout: self
+#   - script: echo "Hello, $(name)"
+# - job: nextHello
+#   dependsOn: A
+#   steps:
+#   - script: echo 'next hello'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '16.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    npm install
+    npm run build
+  displayName: 'npm install and build'
+
+- script: |
+    npm run test
+  displayName: "Running test"
+
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(Build.SourcesDirectory)'
+    includeRootFolder: false
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    replaceExistingArchive: true
+  displayName: 'Archive build files'
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    artifact: 'drop'
+  displayName: 'Publish artifact'
+
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Azure subscription 1'
+    appType: 'webapp'
+    WebAppName: 'backend20230513'
+    packageForLinux: '$(Build.ArtifactStagingDirectory)$(Build.BuildId).zip'
+    RuntimeStack: 'NODE|14.x'
+    StartupCommand: 'npm start'
+    enableCustomDeployment: true
+  displayName: 'Deploy to Azure App Service'
+  
