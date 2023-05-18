@@ -30,12 +30,6 @@ steps:
   displayName: "Running test"
 
 - task: ArchiveFiles@2
-  displayName: 'Archive build'
-  inputs:
-    rootFolderOrFile: build
-    includeRootFolder: false
-
-- task: ArchiveFiles@2
   displayName: 'Archive files'
   inputs:
     rootFolderFile: '$(System.DefaultWorkingDirectory)'
@@ -46,5 +40,3 @@ steps:
 
 - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
   artifact: drop
-
-  
