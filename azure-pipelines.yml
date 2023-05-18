@@ -4,16 +4,33 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 
+trigger:
+- main
+
+
+pool:
+  name: Default
+  demands:
+  - agent.name -equals LAPTOP01
+
+
 steps:
 - task: NodeTool@0
   inputs:
     versionSpec: '16.x'
   displayName: 'Install Node.js'
 
-- script: |
-    npm install
-    npm run build
-  displayName: 'npm install and build'
+- task: Npm@1
+  displayName: 'npm install'
+  inputs:
+    verbose: false
+
+- task: Npm@1
+  displayName: 'npm build'
+  inputs:
+    command: custom
+    verbose: false
+    customCommand: 'run build'
 
 - script: |
     npm run test
@@ -25,10 +42,7 @@ steps:
     rootFolderOrFile: build
     includeRootFolder: false
 
-- task: PublishPipelineArtifact@1
-  inputs:
-    pathToPublish: '$(Build.ArtifactStagingDirectory)'
-    artifact: 'drop'
-  displayName: 'Publish artifact'
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
 
   
