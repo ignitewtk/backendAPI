@@ -20,17 +20,10 @@ steps:
     versionSpec: '16.x'
   displayName: 'Install Node.js'
 
-- task: Npm@1
-  displayName: 'npm install'
-  inputs:
-    verbose: false
-
-- task: Npm@1
-  displayName: 'npm build'
-  inputs:
-    command: custom
-    verbose: false
-    customCommand: 'run build'
+- script: |
+    npm install
+    npm run build
+  displayName: 'npm install and build'
 
 - script: |
     npm run test
