@@ -13,4 +13,4 @@ COPY . .
 
 CMD ["node", "./bin/www"]
 
-EXPOSE 3050
+EXPOSE 3000
