@@ -4,16 +4,6 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 
-trigger:
-- main
-
-
-pool:
-  name: Default
-  demands:
-  - agent.name -equals LAPTOP01
-
-
 steps:
 - task: NodeTool@0
   inputs:
@@ -28,6 +18,12 @@ steps:
 - script: |
     npm run test
   displayName: "Running test"
+
+- task: ArchiveFiles@2
+  displayName: 'Archive build'
+  inputs:
+    rootFolderOrFile: build
+    includeRootFolder: false
 
 - task: PublishPipelineArtifact@1
   inputs:
