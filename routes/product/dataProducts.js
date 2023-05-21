@@ -1,4 +1,8 @@
-const HOST = "http://192.168.1.4:3050"
+const {getLocalIP} = require('../../utils/utils')
+const localIP = getLocalIP();
+
+const HOST = ""
+console.log(' -------- Local IP:', localIP, HOST);
 const dataProducts = [
     {
         productName: "Pork Loin",
@@ -7,7 +11,7 @@ const dataProducts = [
         rating: 3,
         category1: 'Meat',
         category2: 'Pork',
-        src: HOST + "/public/images/products/PorkLoin.jpg"
+        src: HOST + "/images/products/PorkLoin.jpg"
     },
     {
         productName: "Asian Baby Bulk Choy",
@@ -16,7 +20,7 @@ const dataProducts = [
         rating: 4,
         category1: 'Veges',
         category2: 'Green',
-        src: HOST + "/public/images/products/Asian Baby Bulk Choy.jpg"
+        src: HOST + "/images/products/Asian Baby Bulk Choy.jpg"
     },
     {
         productName: "Fresh Eggs",
@@ -25,7 +29,7 @@ const dataProducts = [
         rating: 5,
         category1: 'Dairy',
         category2: 'Egg',
-        src: HOST + "/public/images/products/Fresh Eggs.jpg"
+        src: HOST + "/images/products/Fresh Eggs.jpg"
     },
     {
         productName: "Chicken Wings",
@@ -34,7 +38,7 @@ const dataProducts = [
         rating: 5,
         category1: 'Meat',
         category2: 'Chicken',
-        src: HOST + "/public/images/products/Chicken Wings.jpg"
+        src: HOST + "/images/products/Chicken Wings.jpg"
     },
     {
         productName: "Green Grapes",
@@ -43,7 +47,7 @@ const dataProducts = [
         rating: 4,
         category1: 'Fruit',
         category2: 'Grape',
-        src: HOST + "/public/images/products/Green Grapes.jpg"
+        src: HOST + "/images/products/Green Grapes.jpg"
     },
     {
         productName: "Fuji Apples",
@@ -52,7 +56,7 @@ const dataProducts = [
         rating: 5,
         category1: 'Fruit',
         category2: 'Apple',
-        src: HOST + "/public/images/products/Fuji Apples.jpg"
+        src: HOST + "/images/products/Fuji Apples.jpg"
     },
     {
         productName: "Keitt Mango",
@@ -61,7 +65,7 @@ const dataProducts = [
         rating: 4,
         category1: 'Fruit',
         category2: 'Mango',
-        src: HOST + "/public/images/products/Keiit Mango.jpg"
+        src: HOST + "/images/products/Keiit Mango.jpg"
     },
     {
         productName: "Royal Gala Apples",
@@ -70,7 +74,7 @@ const dataProducts = [
         rating: 5,
         category1: 'Fruit',
         category2: 'Apple',
-        src: HOST + "/public/images/products/Royal Gala Apples.jpg"
+        src: HOST + "/images/products/Royal Gala Apples.jpg"
     },
     {
         productName: "Tomatoes",
@@ -79,7 +83,7 @@ const dataProducts = [
         rating: 4,
         category1: 'Veges',
         category2: 'Tomato',
-        src: HOST + "/public/images/products/Tomatoes.jpg"
+        src: HOST + "/images/products/Tomatoes.jpg"
     },
     {
         productName: "Chicken Drumpstick",
@@ -88,7 +92,7 @@ const dataProducts = [
         rating: 5,
         category1: 'Meat',
         category2: 'Chicken',
-        src: HOST + "/public/images/products/Chicken Drumpstick.jpg"
+        src: HOST + "/images/products/Chicken Drumpstick.jpg"
     },
     {
         productName: "Japanese Bulk Choy",
@@ -97,7 +101,7 @@ const dataProducts = [
         rating: 5,
         category1: 'Veges',
         category2: 'Green',
-        src: HOST + "/public/images/products/Japanese Bulk Choy.jpg"
+        src: HOST + "/images/products/Japanese Bulk Choy.jpg"
     },
     {
         productName: "Creamy Potato",
@@ -106,7 +110,7 @@ const dataProducts = [
         rating: 4,
         category1: 'Veges',
         category2: 'Potato',
-        src: HOST + "/public/images/products/Creamy Potato.jpg"
+        src: HOST + "/images/products/Creamy Potato.jpg"
     },
     {
         productName: "Washed Potatoes",
@@ -115,7 +119,7 @@ const dataProducts = [
         rating: 5,
         category1: 'Veges',
         category2: 'Potato',
-        src: HOST + "/public/images/products/Washed Potatoes.jpg"
+        src: HOST + "/images/products/Washed Potatoes.jpg"
     },
     {
         productName: "Seedless Grapes",
@@ -124,7 +128,7 @@ const dataProducts = [
         rating: 5,
         category1: 'Fruit',
         category2: 'Grape',
-        src: HOST + "/public/images/products/Seedless Grapes.jpg"
+        src: HOST + "/images/products/Seedless Grapes.jpg"
     },
     {
         productName: "Seedless Finger Grapes",
@@ -133,7 +137,7 @@ const dataProducts = [
         rating: 5,
         category1: 'Fruit',
         category2: 'Grape',
-        src: HOST + "/public/images/products/Seedless Finger Grapes.jpg"
+        src: HOST + "/images/products/Seedless Finger Grapes.jpg"
     },
     {
         productName: "Pork Ribs",
@@ -142,7 +146,7 @@ const dataProducts = [
         rating: 4,
         category1: 'Meat',
         category2: 'Pork',
-        src: HOST + "/public/images/products/Pork Ribs.jpg"
+        src: HOST + "/images/products/Pork Ribs.jpg"
     },
     {
         productName: "Frozen T-bones Steak",
@@ -151,7 +155,7 @@ const dataProducts = [
         rating: 5,
         category1: 'Meat',
         category2: 'Steak',
-        src: HOST + "/public/images/products/Frozen T-bones Steak.jpg"
+        src: HOST + "/images/products/Frozen T-bones Steak.jpg"
     },
     {
         productName: "Fresh Frozen Beef Steak",
@@ -160,7 +164,7 @@ const dataProducts = [
         rating: 4,
         category1: 'Meat',
         category2: 'Steak',
-        src: HOST + "/public/images/products/Fresh Frozen Beef Steak.jpg"
+        src: HOST + "/images/products/Fresh Frozen Beef Steak.jpg"
     },
 ]
 

@@ -10,8 +10,8 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/xxx', function(req, res, next) {
-  res.render('index', { title: 'api' });
+router.get('/apiTest', function(req, res, next) {
+  res.render('index', { title: 'API Test' });
 });
 
 router.get('/xxx/page1', function(req, res, next) {
