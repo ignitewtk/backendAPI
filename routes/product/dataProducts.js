@@ -2,7 +2,7 @@ const {getLocalIP} = require('../../utils/utils')
 const localIP = getLocalIP();
 
 const HOST = ""
-console.log(' -------- Local IP:', localIP, HOST);
+// console.log(' -------- Local IP:', localIP, HOST);
 const dataProducts = [
     {
         productName: "Pork Loin",
