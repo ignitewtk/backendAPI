@@ -14,8 +14,10 @@ router.get('/apiTest', function(req, res, next) {
   res.render('index', { title: 'API Test' });
 });
 
-router.get('/xxx/page1', function(req, res, next) {
-  res.render('index', { title: 'page1' });
+router.get('/webapp/page1', (req, res) => res.json({message: 'Hello World.'}))
+
+router.get('/webapp/page2', function(req, res, next) {
+  return res.json({message: "Hello world."})
 });
 
 
