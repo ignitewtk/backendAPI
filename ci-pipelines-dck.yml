@@ -28,12 +28,17 @@ stages:
     pool:
       vmImage: $(vmImageName)
     steps:
-    - task: Docker@2
-      displayName: Build and push an image to container registry
-      inputs:
-        command: buildAndPush
-        repository: $(imageRepository)
-        dockerfile: $(dockerfilePath)
-        containerRegistry: $(dockerRegistryServiceConnection)
-        tags: |
-          $(tag)
+    - script: echo build docker image pending
+    - task: NodeTool@0
+      displayName: 'Use Node 16.x'
+      # inputs:
+      #   versionSpec: 16.x
+    # - task: Docker@2
+    #   displayName: Build and push an image to container registry
+    #   inputs:
+    #     command: buildAndPush
+    #     repository: $(imageRepository)
+    #     dockerfile: $(dockerfilePath)
+    #     containerRegistry: $(dockerRegistryServiceConnection)
+    #     tags: |
+    #       $(tag)

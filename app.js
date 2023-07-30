@@ -5,6 +5,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+// inject required router from ./routes, APIs are developed in ./routes
+// TODO: add more API here
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productRouter = require('./routes/product/product')
@@ -35,12 +37,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Method 2
 app.use(cors())
 
-
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
-
+// Use API routes
+// TODO: add more API here
 app.use('/', indexRouter);
-
 app.use('/files/add', indexRouter);
 app.use('/users', usersRouter);
 app.use('/product', productRouter)
