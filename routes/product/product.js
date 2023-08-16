@@ -3,10 +3,11 @@ var express = require('express');
 
 var router = express.Router()
 var dataProducts = require('./dataProducts')
+var products = require('./mock')
 const { datapipelines } = require('googleapis/build/src/apis/datapipelines');
 
 /* 
-  get products list. 
+  get products list. for JS app
   http://localhost:3050/api/product/list
   */
 router.post('/list', function(req, res, next) {
@@ -24,6 +25,16 @@ router.post('/list', function(req, res, next) {
     // let url = `/public/images/products/${req.body.productName}`
     console.log(products)
     res.send(products);
+});
+
+
+/* 
+  get products list. for TS app
+  https://backend202307112242.azurewebsites.net/product/productlist
+  */
+router.get('/productlist', function(req, res, next) {
+  console.log("(product/productlist) req body:", req.body)
+  res.send(products);
 });
 
 
@@ -81,7 +92,9 @@ router.post('/image', function(req, res, next) {
   //   })
 });
 
-
+/*
+  Test URL: http://localhost:3000/product/plist
+*/
 
 router.get('/plist', function(req, res, next) {
   const products = [
