@@ -1,7 +1,7 @@
 const products = [
     {
         "productId": "1",
-        "productName": "Test Pork Loin",
+        "productName": "Pork Loin",
         "originPrice": 8.5,
         "discountPrice": 8.5,
         "rating": 3,
@@ -9,7 +9,7 @@ const products = [
     },
     {
         "productId": "2",
-        "productName": "Test Asian Baby Bulk Choy",
+        "productName": "Asian Baby Bulk Choy",
         "originPrice": 2.5,
         "discountPrice": 2.5,
         "rating": 4,
@@ -17,7 +17,7 @@ const products = [
     },
     {
         "productId": "3",
-        "productName": "Test Fresh Eggs",
+        "productName": "Fresh Eggs",
         "originPrice": 7.00,
         "discountPrice": 6.5,
         "rating": 5,
@@ -25,7 +25,7 @@ const products = [
     },
     {
         "productId": "4",
-        "productName": "Test Chicken Wings",
+        "productName": "Chicken Wings",
         "originPrice": 7.00,
         "discountPrice": 6.5,
         "rating": 5,
@@ -33,7 +33,7 @@ const products = [
     },
     {
         "productId": "5",
-        "productName": "Test Green Grapes",
+        "productName": "Green Grapes",
         "originPrice": 2.5,
         "discountPrice": 2.5,
         "rating": 4,
@@ -41,7 +41,7 @@ const products = [
     },
     {
         "productId": "6",
-        "productName": "Test Fuji Apples",
+        "productName": "Fuji Apples",
         "originPrice": 7.00,
         "discountPrice": 6.5,
         "rating": 5,
@@ -49,7 +49,7 @@ const products = [
     },
     {
         "productId": "7",
-        "productName": "Test Keitt Mango",
+        "productName": "Keitt Mango",
         "originPrice": 2.5,
         "discountPrice": 2.5,
         "rating": 4,
@@ -57,7 +57,7 @@ const products = [
     },
     {
         "productId": "8",
-        "productName": "Test Royal Gala Apples",
+        "productName": "Royal Gala Apples",
         "originPrice": 7.00,
         "discountPrice": 6.5,
         "rating": 5,
@@ -65,7 +65,7 @@ const products = [
     },
     {
         "productId": "9",
-        "productName": "Test Tomatoes",
+        "productName": "Tomatoes",
         "originPrice": 2.5,
         "discountPrice": 2.5,
         "rating": 4,
@@ -73,7 +73,7 @@ const products = [
     },
     {
         "productId": "10",
-        "productName": "Test Chicken Drumpstick",
+        "productName": "Chicken Drumpstick",
         "originPrice": 7.00,
         "discountPrice": 6.5,
         "rating": 5,
@@ -81,7 +81,7 @@ const products = [
     },
     {
         "productId": "11",
-        "productName": "Test Japanese Bulk Choy",
+        "productName": "Japanese Bulk Choy",
         "originPrice": 7.00,
         "discountPrice": 6.5,
         "rating": 5,
@@ -89,7 +89,7 @@ const products = [
     },
     {
         "productId": "12",
-        "productName": "Test Creamy Potato",
+        "productName": "Creamy Potato",
         "originPrice": 2.5,
         "discountPrice": 2.5,
         "rating": 4,
@@ -97,7 +97,7 @@ const products = [
     },
     {
         "productId": "13",
-        "productName": "Test Washed Potatoes",
+        "productName": "Washed Potatoes",
         "originPrice": 7.00,
         "discountPrice": 6.5,
         "rating": 5,
@@ -105,7 +105,7 @@ const products = [
     },
     {
         "productId": "14",
-        "productName": "Test Seedless Grapes",
+        "productName": "Seedless Grapes",
         "originPrice": 7.00,
         "discountPrice": 6.5,
         "rating": 5,
@@ -113,7 +113,7 @@ const products = [
     },
     {
         "productId": "15",
-        "productName": "Test Seedless Finger Grapes",
+        "productName": "Seedless Finger Grapes",
         "originPrice": 7.00,
         "discountPrice": 6.5,
         "rating": 5,
@@ -121,7 +121,7 @@ const products = [
     },
     {
         "productId": "16",
-        "productName": "Test Pork Ribs",
+        "productName": "Pork Ribs",
         "originPrice": 2.5,
         "discountPrice": 2.5,
         "rating": 4,
@@ -129,7 +129,7 @@ const products = [
     },
     {
         "productId": "17",
-        "productName": "Test Frozen T-bones Steak",
+        "productName": "Frozen T-bones Steak",
         "originPrice": 7.00,
         "discountPrice": 6.5,
         "rating": 5,
@@ -137,7 +137,7 @@ const products = [
     },
     {
         "productId": "18",
-        "productName": "Test Fresh Frozen Beef Steak",
+        "productName": "Fresh Frozen Beef Steak",
         "originPrice": 2.5,
         "discountPrice": 2.5,
         "rating": 4,
